@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.spider.dao.CsdnblogDao">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.spider.entity.Csdnblog">
+        <result column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="date" property="date"/>
+        <result column="tags" property="tags"/>
+        <result column="category" property="category"/>
+        <result column="view" property="view"/>
+        <result column="comments" property="comments"/>
+        <result column="copyright" property="copyright"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `id`,
+        `title`,
+        `date`,
+        `tags`,
+        `category`,
+        `view`,
+        `comments`,
+        `copyright`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" >
+        INSERT INTO csdnblog (
+            `id`,
+            `title`,
+            `date`,
+            `tags`,
+            `category`,
+            `view`,
+            `comments`,
+            `copyright`
+        ) VALUES (
+            #{pojo.id},
+            #{pojo.title},
+            #{pojo.date},
+            #{pojo.tags},
+            #{pojo.category},
+            #{pojo.view},
+            #{pojo.comments},
+            #{pojo.copyright}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO csdnblog
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null"> `id`,</if>
+            <if test="pojo.title!=null"> `title`,</if>
+            <if test="pojo.date!=null"> `date`,</if>
+            <if test="pojo.tags!=null"> `tags`,</if>
+            <if test="pojo.category!=null"> `category`,</if>
+            <if test="pojo.view!=null"> `view`,</if>
+            <if test="pojo.comments!=null"> `comments`,</if>
+            <if test="pojo.copyright!=null"> `copyright`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null">#{pojo.id},</if>
+            <if test="pojo.title!=null">#{pojo.title},</if>
+            <if test="pojo.date!=null">#{pojo.date},</if>
+            <if test="pojo.tags!=null">#{pojo.tags},</if>
+            <if test="pojo.category!=null">#{pojo.category},</if>
+            <if test="pojo.view!=null">#{pojo.view},</if>
+            <if test="pojo.comments!=null">#{pojo.comments},</if>
+            <if test="pojo.copyright!=null">#{pojo.copyright},</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO csdnblog (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.title},
+            #{pojo.date},
+            #{pojo.tags},
+            #{pojo.category},
+            #{pojo.view},
+            #{pojo.comments},
+            #{pojo.copyright}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE csdnblog
+        <set>
+            <if test="pojo.id != null"> `id` = #{pojo.id}, </if>
+            <if test="pojo.title != null"> `title` = #{pojo.title}, </if>
+            <if test="pojo.date != null"> `date` = #{pojo.date}, </if>
+            <if test="pojo.tags != null"> `tags` = #{pojo.tags}, </if>
+            <if test="pojo.category != null"> `category` = #{pojo.category}, </if>
+            <if test="pojo.view != null"> `view` = #{pojo.view}, </if>
+            <if test="pojo.comments != null"> `comments` = #{pojo.comments}, </if>
+            <if test="pojo.copyright != null"> `copyright` = #{pojo.copyright} </if>
+        </set>
+        WHERE id = #{pojo.id}
+    </update>
+</mapper>
+
