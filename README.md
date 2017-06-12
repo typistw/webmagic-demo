@@ -7,7 +7,7 @@
 [3.1 web magic](https://github.com/code4craft/webmagic)  
 [3.2 基于WebMagic写的一个csdn博客小爬虫](https://github.com/liyifeng1994/webmagic-csdnblog)
 ## 4 run
-4.1 xpath解析: 直接运行 **SpiderDemoApplication** 类中main函数【参考于3.1】  
+4.1 xpath解析: 直接运行 **SpiderDemoApplication** 类中main函数
 4.2 json解析：自定义jsonPileline  
 ```
 @Override
@@ -17,6 +17,6 @@ public void process(ResultItems resultItems, Task task) {
    log.info("result = " + entity.toString());
 }
 ```  
-直接运行 **GithubRepoPageProcessor** 类中main函数【参考于3.2】
+直接运行 **GithubRepoPageProcessor** 类中main函数
 
 
